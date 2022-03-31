@@ -16,26 +16,19 @@ const zipNumber = document.getElementById('zip');
 
 const openWeather = async function (baseLink, zip = '', api) {
   //defining url
-  try {
     const url = `${baseLink}zip=${zip}${api}` 
-    console.log(url)
-    //waiting for defining response
-    const response = await fetch(url) 
-    let jsonText = await response.json() 
-    return jsonText
-   console.log(url)
-  } catch (error){
-    const title=document.querySelector('#title1');
-   
-    title.innerHTML="Unexpected error fetching data "
-  } if (zip = "" ) {
-    alert("Enter Valid US Zip Code")
-  }
-  
-  //waiting for defining jsonText
+    return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        title.innerHTML="Unexpected error fetching data ";
+        throw new Error(response.status);
+      }
+});
+
  
 }
-
 
 // custom data by user
 const postServer = async function (path, data = {}) {
