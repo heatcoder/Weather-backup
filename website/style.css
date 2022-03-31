@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 1em;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body{
+    background: #fffff8;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    align-items: center;
+}
+
+#app{
+    display: grid;
+    grid-auto-rows: minmax(150px, auto);
+    /* grid-template-columns:  */
+
+    background: #b3ffdc;
+    color: #000000;
+    justify-content: center;
+    grid-gap: 1.5em;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    align-items: center;
+}
+
+.holder {
+
+    padding:0;    
+
+    padding-left:2em;
+    padding-right:2em;
+    padding-top:1em;
+    display:grid;
+    row-gap: 2em;;
+    justify-items: center;
+  
+
+}
+
+.feel{
+    padding:1em;
+    border: 2px solid black;
+
+}
+
+.myInput {
+    padding:.5em;
+}
+
+.entry{
+    background: rgba(59, 74, 107, .4);
+    align-items: center;
+}
+
+#entryHolder{
+
+    display: flex;
+    padding:1em;
+    justify-content: center;
+}
+
+
+
+#date, #temp, #content {
+   padding: 2em;     
+}
+
+
+.headline {
+    font-size: 4em;
+    text-align: center;
+
+}
+.title{
+    padding: .3em;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: #444;
+    color: #fffff8;
+}
+#dateholder {
+   padding-right: 1em;
+    text-align: center;
+   background-color: #fffff8;
+   padding-top:.5em;
+   
+
+   
+}
+
+#tempholder {
+    padding-right: 1em;
+    padding-left: 1em;
+    text-align: center;
+    background-color: #fffff8;
+    padding-top:.5em;
+}
+
+#contentHolder {
+    padding-right: 1em;
+    text-align: center;
+    background-color: #fffff8;
+    padding-top:.5em;
+}
+
+#temp, #date, #content {
+
+    color: #ff0404;
+    font-size: 1em;
+}
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:block;
+    font-size: 27px;
+}
+
+input{
+    display:block;
+    height: 60px;
+    width:15em;
+    background:#ffffff;
+    color: #8d8d8a;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    padding:5px;
+}
+
+button{
+    width: 10em;
+    height: 50px;
+    background: #3b4a6b;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    border-radius: .5em;
+    box-shadow: 2px 4px 5px #444;
+}
+
+
+h1{
+    font-size: 36px;
+}
+
+button:hover {
+    cursor: pointer;
+    width: 10em;
+    height: 50px;
+    background: #9cbbff;
+    color: #ffffff;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    border-radius: .5em;
+    box-shadow: 2px 4px 5px #444;
+}
+
+textarea{
+    background:#ffffff;
+    color: #f0d43a;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #808080; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: #808080; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: #808080; 
+    font-family: 'Oswald', sans-serif;
+
+} 
