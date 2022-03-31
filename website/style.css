@@ -124,7 +124,7 @@ input{
     height: 60px;
     width:15em;
     background:#ffffff;
-    color: #8d8d8a;
+    color: #ff0000;
     font-size: 1em;
     font-family: 'Oswald', sans-serif;
     border: none;
@@ -163,7 +163,7 @@ button:hover {
 
 textarea{
     background:#ffffff;
-    color: #f0d43a;
+    color: #ff0000;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }

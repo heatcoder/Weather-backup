@@ -16,16 +16,23 @@ const zipNumber = document.getElementById('zip');
 
 const openWeather = async function (baseLink, zip = '', api) {
   //defining url
-    const url = `${baseLink}zip=${zip}${api}` 
-    return fetch(url)
-    .then(response => {
-      if (response.status == 200) {
-        return response.json();
-      } else {
-        title.innerHTML="Unexpected error fetching data ";
-        throw new Error(response.status);
-      }
-});
+  const url = `${baseLink}zip=${zip}${api}` 
+  let title=document.querySelector('#title1');
+  return fetch(url)
+  .then(response => {
+    if (response.status == 200) {
+      return response.json();
+    } else {
+      setTimeout(warn, 10)
+      function warn () {
+        title.innerHTML="Please enter all fields"
+        setTimeout(warnWillDisapear, 3000)
+          function warnWillDisapear () {
+          title.innerHTML="Most Recent Entry ";
+        }}
+      throw new Error(response.status);
+    }
+  });
 
  
 }
