@@ -13,7 +13,7 @@
   </div>
   <div class ="holder zip">
     <label for="zip">Enter Zipcode here</label>
-    <input type="text" id="zip" placeholder="enter valid US zip code here">
+    <input type="text" maxlength="5" pattern="\d{5}" id="zip" placeholder="enter valid US zip code here">
   </div>
   <div class ="holder feel">
     <label for="feelings">How are you feeling today?</label>
@@ -26,7 +26,7 @@
     <div id=dateholder> Date
     <div id = "date"></div> 
     </div> 
-   <div id="tempholder"> Temperature(Degree)
+   <div id="tempholder"> Temperature(Degree Celsius)
     <div id = "temp"></div>
    </div>
    <div id="contentHolder"> Feeling
