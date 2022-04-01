@@ -1,4 +1,9 @@
 /* Global Project Variables */
+// Link and Key from openweathremap.org
+
+const apiKey = '&appid=31562766ee00aa3699e7ad8ca87a71c3&units=metric';
+const baseLink = 'http://api.openweathermap.org/data/2.5/weather?'
+
 const content = document.getElementById('content')
 const feelingsField = document.getElementById('feelings')
 const dateField = document.getElementById('date')
@@ -6,19 +11,19 @@ const temperatureField = document.getElementById('temp')
 
 // Dynamically create a new JS date instance
 let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+let newDate = (d.getMonth()+1) + '.' + d.getDate() + '.' + d.getFullYear();
 
-// Link and Key from openweathremap.org
-const key = '&appid=31562766ee00aa3699e7ad8ca87a71c3'
-const baseLink = 'http://api.openweathermap.org/data/2.5/weather?'
+
+console.log (newDate)
+
 
 //Zip number constant
 const zipNumber = document.getElementById('zip'); 
 console.log(zipNumber)
-const openWeather = async function (baseLink, zipNumber = '', key) {
-  
+const openWeather = async function (baseLink, zipNumber = '', apiKey) {
+
   //defining url
-  const url = `${baseLink}zip=${zipNumber}${key}` 
+  const url = `${baseLink}zip=${zipNumber}${apiKey}` 
 
   let title=document.querySelector('#title1');
   return fetch(url).then(response => {
@@ -56,7 +61,7 @@ const postServer = async function (path, data = {}) {
 
 //button  asynchronus function, sending and receiving data from server
 const button = async function () { 
-  const newData = await openWeather(baseLink, zipNumber.value, key)
+  const newData = await openWeather(baseLink, zipNumber.value, apiKey)
   const data = { date: newDate, temperature: newData.main.temp, feelingsData: feelingsField.value}
   await postServer(('http://localhost:3000'), data) 
 
@@ -66,8 +71,9 @@ const button = async function () {
     dateField.innerHTML = jsonText.date;
     content.innerHTML = jsonText.feelingsPost;
   
-    // changed temparature to degree celcius
-    temperatureField.innerHTML = Math.floor((jsonText.temperature)-273.15);     
+    // Unit value rounded up
+    temperatureField.innerHTML = Math.floor((jsonText.temperature)); 
+    // temperatureField.innerHTML = Math.floor((jsonText.temperature)-273.15);   //unit has been converted in the key    
   });
   
 } 
